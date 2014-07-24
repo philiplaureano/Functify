@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Functify</id>
+        <version>$version$</version>
+        <title>Functify</title>
+        <authors>Philip Laureano</authors>
+        <owners>Philip Laureano</owners>
+        <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/philiplaureano/Functify</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A C# extension library that allows users to compose and curry Func&lt;&gt; and Action&lt;&gt; delegate instances at runtime.</description>
+        <copyright>Copyright ©  2014 Philip Laureano</copyright>
+        <tags>csharp functional lambda delegates func action</tags>
+    </metadata>
+    <files>
+        <file src="bin\Debug\Functify.dll" target="lib\net45\Functify.dll" />
+        <file src="bin\Debug\Functify.pdb" target="lib\net45\Functify.pdb" />
+    </files>
+</package>
