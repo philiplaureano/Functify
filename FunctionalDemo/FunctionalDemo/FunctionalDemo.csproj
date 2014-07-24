@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Functify">
-      <HintPath>..\packages\Functify.1.0.5318.42171\lib\net45\Functify.dll</HintPath>
+      <HintPath>..\..\Functify\bin\Debug\Functify.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
