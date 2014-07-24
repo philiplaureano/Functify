@@ -49,9 +49,12 @@ namespace Functify
             return SelectMany(f, a => selector(a).Select(b => combine(a, b)));
         }
 
-        public static Func<A, C> Then<A, B, C>(this Func<A,B> f, Func<B,C> g) { return f.Select(g); }
+        public static Func<A, C> Then<A, B, C>(this Func<A, B> f, Func<B, C> g)
+        {
+            return f.Select(g);
+        }
 
-        public static Func<T, IEnumerable<A>> Sequence<T,A>(this IEnumerable<Func<T, A>> fns)
+        public static Func<T, IEnumerable<A>> Sequence<T, A>(this IEnumerable<Func<T, A>> fns)
         {
             return t => fns.Select(fn => fn(t));
         }
