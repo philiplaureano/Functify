@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Functify;
+using LinFu.Delegates;
 
 namespace FunctionalDemo
 {
@@ -40,6 +42,16 @@ namespace FunctionalDemo
                 select Tuple.Create(next, dbl);
             var showF = f.Select(x => x.ToString());
             writeLine(showF(10)); // writes "(11, 20)"
+
+            // Partial Application example:
+            Func<int, int, int, int> addThreeIntegers = (a, b, c) => a + b + c;
+
+            // This call to Partial<TDelegate>() leaves the second parameter open
+            // and binds parameters "a" and "c" to the value of "2"
+            var addOneInteger = addThreeIntegers.Partial<Func<int, int>>(2, Args.Open, 2);
+            var result = addOneInteger(1);
+
+            writeLine(result.ToString(CultureInfo.InvariantCulture));
 
             Console.ReadKey();
         }
