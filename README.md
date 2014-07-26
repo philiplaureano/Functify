@@ -29,5 +29,25 @@ Here's an example of how you can use it:
                 .Then(writeLine.Bind("World!"));
 
             helloWorld();
+
+            // Convert multiple functions with same input to a single function with multiple outputs
+            Func<int, int> incr = x => x + 1;
+            var fns = new[] {incr, timesTwo}.Sequence();
+            Show(fns(10)); // writes "11,20"
+
+            // Compose with LINQ
+            var f =
+                from next in incr
+                from dbl in timesTwo
+                select Tuple.Create(next, dbl);
+            var showF = f.Select(x => x.ToString());
+            writeLine(showF(10)); // writes "(11, 20)"
+
+            Console.ReadKey();
+        }
+
+        private static void Show<T>(IEnumerable<T> values)
+        {
+            Console.WriteLine(String.Join(", ", values.Select(x => x.ToString())));
         }
     }
