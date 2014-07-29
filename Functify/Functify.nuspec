@@ -15,6 +15,7 @@
     <dependencies>
       <dependency id="LinFu.DynamicProxy.OfficialRelease" version="1.0.5"/>
       <dependency id="LinFu.Delegates" version="1.0.0.32889" />
+      <dependency id="LinFu.Finders" version="1.0.1"/>
     </dependencies>
   </metadata>
   <files>

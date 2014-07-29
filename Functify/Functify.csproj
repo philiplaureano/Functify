@@ -36,6 +36,9 @@
     <Reference Include="LinFu.DynamicProxy">
       <HintPath>..\packages\LinFu.DynamicProxy.OfficialRelease.1.0.5\lib\net\LinFu.DynamicProxy.dll</HintPath>
     </Reference>
+    <Reference Include="LinFu.Finders">
+      <HintPath>..\packages\LinFu.Finders.1.0.1\lib\LinFu.Finders.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,7 +50,9 @@
   <ItemGroup>
     <Compile Include="ActionChainingExtensions.cs" />
     <Compile Include="ActionCurryingExtensions.cs" />
+    <Compile Include="ArrayToExplicitArgumentConversionExtensions.cs" />
     <Compile Include="ConditionalExtensions.cs" />
+    <Compile Include="Constructor.cs" />
     <Compile Include="FunctionChainingExtensions.cs" />
     <Compile Include="FunctionCurryingExtensions.cs" />
     <Compile Include="PartialApplicationExtensions.cs" />
