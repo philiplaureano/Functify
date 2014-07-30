@@ -53,8 +53,8 @@ namespace Functify
             candidateMethods.AddCriteria(m => m.Name == methodName, CriteriaType.Critical);
 
             // Match the argument count
-            var arguments = args ?? new object[0];
-            for (var i = 0; i < expectedArgumentCount; i++)
+            var arguments = args;
+            for (var i = 0; arguments != null && i < expectedArgumentCount; i++)
             {
                 var currentArgument = arguments[i];
 
