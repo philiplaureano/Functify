@@ -55,6 +55,7 @@
     <Compile Include="Constructor.cs" />
     <Compile Include="FunctionChainingExtensions.cs" />
     <Compile Include="FunctionCurryingExtensions.cs" />
+    <Compile Include="MethodCallExtensions.cs" />
     <Compile Include="MethodFinderExtensions.cs" />
     <Compile Include="PartialApplicationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
