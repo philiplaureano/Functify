@@ -25,26 +25,11 @@ namespace Functify
             var constructors = typeof(TResult).GetConstructors(Flags);
             return args =>
             {
-                var candidateConstructors = constructors.AsFuzzyList();
-                var expectedArgumentCount = args != null ? args.Length : 0;
-
-                // Match the argument count
-                var arguments = args ?? new object[0];
-                for (var i = 0; i < expectedArgumentCount; i++)
-                {
-                    var currentArgument = arguments[i];
-
-                    // Match the argument types
-                    var currentIndex = i;
-                    if (currentArgument != null)
-                        candidateConstructors.AddCriteria(m => matchesParameterType(m, currentIndex, currentArgument.GetType()), CriteriaType.Critical);
-                }
-
-                var bestMatch = candidateConstructors.BestMatch();
+                var bestMatch = constructors.GetBestMatch(".ctor", new Type[0], args);
                 if (bestMatch == null)
                     throw new MissingMethodException(string.Format("Unable to find a suitable constructor for type '{0}'", typeof(TResult)));
 
-                var constructor = bestMatch.Item;
+                var constructor = bestMatch;
                 return (TResult)constructor.Invoke(args);
             };
         }
