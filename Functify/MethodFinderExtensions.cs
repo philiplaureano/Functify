@@ -53,6 +53,8 @@ namespace Functify
             candidateMethods.AddCriteria(m => m.Name == methodName, CriteriaType.Critical);
 
             // Match the argument count
+            candidateMethods.AddCriteria(m => m.GetParameters().Length == expectedArgumentCount, CriteriaType.Critical);
+
             var arguments = args;
             for (var i = 0; arguments != null && i < expectedArgumentCount; i++)
             {
